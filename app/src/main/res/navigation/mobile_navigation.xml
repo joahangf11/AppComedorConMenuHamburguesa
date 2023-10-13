@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@id/principalFragment">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="mx.rmr.menuhamburguesaadmin.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_calificaciones"
+        android:name="mx.rmr.menuhamburguesaadmin.ui.calificaciones.CalificacionesFragment"
+        android:label="@string/menu_calificaciones"
+        tools:layout="@layout/fragment_calificaciones" />
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -22,4 +22,13 @@
         android:name="mx.rmr.menuhamburguesaadmin.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/principalFragment"
+        android:name="mx.rmr.menuhamburguesaadmin.ui.view.PrincipalFragment"
+        android:label="fragment_principal"
+        tools:layout="@layout/fragment_principal" >
+        <action
+            android:id="@+id/action_principalFragment_to_nav_calificaciones"
+            app:destination="@id/nav_calificaciones" />
+    </fragment>
 </navigation>
