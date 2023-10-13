@@ -8,6 +8,8 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_calificaciones">Calificaciones</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_escanearqr">Escanear QR</string>
+    <string name="menu_registrarnuevousuario">Registrar Nuevo Usuario</string>
+    <string name="menu_invenario">Inventario</string>
+    <string name="menu_menu">Menu del dia</string>
 </resources>

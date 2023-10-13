@@ -7,21 +7,21 @@
 
     <fragment
         android:id="@+id/nav_calificaciones"
-        android:name="mx.rmr.menuhamburguesaadmin.ui.calificaciones.CalificacionesFragment"
+        android:name="mx.rmr.menuhamburguesaadmin.ui.view.CalificacionesFragment"
         android:label="@string/menu_calificaciones"
         tools:layout="@layout/fragment_calificaciones" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="mx.rmr.menuhamburguesaadmin.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_escanearqr"
+        android:name="mx.rmr.menuhamburguesaadmin.ui.view.EscanearQRFragment"
+        android:label="@string/menu_escanearqr"
+        tools:layout="@layout/fragment_escanearqr" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="mx.rmr.menuhamburguesaadmin.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_registrarnuevousuario"
+        android:name="mx.rmr.menuhamburguesaadmin.ui.view.RegistrarNuevoUsuarioFragment"
+        android:label="@string/menu_registrarnuevousuario"
+        tools:layout="@layout/fragment_registrarnuevousuario" />
     <fragment
         android:id="@+id/principalFragment"
         android:name="mx.rmr.menuhamburguesaadmin.ui.view.PrincipalFragment"
@@ -31,4 +31,14 @@
             android:id="@+id/action_principalFragment_to_nav_calificaciones"
             app:destination="@id/nav_calificaciones" />
     </fragment>
+    <fragment
+        android:id="@+id/nav_inventario"
+        android:name="mx.rmr.menuhamburguesaadmin.ui.view.InventarioFragment"
+        android:label="fragment_inventario"
+        tools:layout="@layout/fragment_inventario" />
+    <fragment
+        android:id="@+id/nav_menu"
+        android:name="mx.rmr.menuhamburguesaadmin.ui.view.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" />
 </navigation>

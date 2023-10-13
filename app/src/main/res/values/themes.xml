@@ -21,8 +21,4 @@
 
     <style name="Theme.MenuHamburguesaAdmin.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <color name="yellow_500">#FFC700</color>
-    <color name="orange_900">#FF9800</color>
-    <color name="pink">#CD6789</color>
-
 </resources>

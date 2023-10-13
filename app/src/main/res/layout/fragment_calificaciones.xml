@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.calificaciones.CalificacionesFragment">
+    tools:context=".ui.view.CalificacionesFragment">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -89,7 +89,7 @@
             <TextView
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:text="Comida "
                 android:textAlignment="center"
                 android:textSize="26sp" />
@@ -97,7 +97,7 @@
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/poppins"
                 android:text="4.5"
