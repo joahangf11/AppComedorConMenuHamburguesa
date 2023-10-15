@@ -7,9 +7,12 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <string name="menu_principal">Inicio de Sesion</string>
     <string name="menu_calificaciones">Calificaciones</string>
     <string name="menu_escanearqr">Escanear QR</string>
     <string name="menu_registrarnuevousuario">Registrar Nuevo Usuario</string>
-    <string name="menu_invenario">Inventario</string>
+    <string name="menu_inventario">Inventario</string>
     <string name="menu_menu">Menu del dia</string>
+    <string name="menu_reportes">Reportar Problema</string>
+    <string name="menu_reportes_ayuda">Detalles de reportar Problema</string>
 </resources>

@@ -127,14 +127,17 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/editTextDate"
-                android:layout_width="wrap_content"
+                android:id="@+id/etFecha"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:clickable="true"
                 android:ems="10"
+                android:focusable="false"
                 android:fontFamily="@font/poppins"
-                android:hint="Fecha de Nacimiento"
+                android:hint="Selecciona la fecha de Nacimiento"
                 android:inputType="date"
+                android:maxLines="1"
                 android:textSize="24sp" />
         </LinearLayout>
 
@@ -145,7 +148,6 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/editTextNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"

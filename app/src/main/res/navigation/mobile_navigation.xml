@@ -25,7 +25,7 @@
     <fragment
         android:id="@+id/principalFragment"
         android:name="mx.rmr.menuhamburguesaadmin.ui.view.PrincipalFragment"
-        android:label="fragment_principal"
+        android:label="@string/menu_principal"
         tools:layout="@layout/fragment_principal" >
         <action
             android:id="@+id/action_principalFragment_to_nav_calificaciones"
@@ -34,11 +34,25 @@
     <fragment
         android:id="@+id/nav_inventario"
         android:name="mx.rmr.menuhamburguesaadmin.ui.view.InventarioFragment"
-        android:label="fragment_inventario"
+        android:label="@string/menu_inventario"
         tools:layout="@layout/fragment_inventario" />
     <fragment
         android:id="@+id/nav_menu"
         android:name="mx.rmr.menuhamburguesaadmin.ui.view.MenuFragment"
-        android:label="fragment_menu"
+        android:label="@string/menu_menu"
         tools:layout="@layout/fragment_menu" />
+    <fragment
+        android:id="@+id/nav_reportes"
+        android:name="mx.rmr.menuhamburguesaadmin.ui.view.ReportesFragment"
+        android:label="@string/menu_reportes"
+        tools:layout="@layout/fragment_reportes" >
+        <action
+            android:id="@+id/action_nav_reportes_to_ayudaReporteFragment"
+            app:destination="@id/ayudaReporteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ayudaReporteFragment"
+        android:name="mx.rmr.menuhamburguesaadmin.ui.view.AyudaReporteFragment"
+        android:label="@string/menu_reportes_ayuda"
+        tools:layout="@layout/fragment_ayuda_reporte" />
 </navigation>

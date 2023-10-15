@@ -1,6 +1,5 @@
 package mx.rmr.menuhamburguesaadmin.ui.view
 
-import android.app.DatePickerDialog
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,20 +7,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import mx.rmr.menuhamburguesaadmin.ui.viewmodel.PrincipalVM
 import mx.rmr.menuhamburguesaadmin.R
-import mx.rmr.menuhamburguesaadmin.databinding.FragmentPrincipalBinding
-import java.util.Calendar
+import mx.rmr.menuhamburguesaadmin.databinding.FragmentReportesBinding
+import mx.rmr.menuhamburguesaadmin.ui.viewmodel.ReportesVM
 
-class PrincipalFragment : Fragment() {
+class ReportesFragment : Fragment() {
 
-    private lateinit var binding: FragmentPrincipalBinding
+    private lateinit var binding: FragmentReportesBinding
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentPrincipalBinding.inflate(layoutInflater)
+        binding = FragmentReportesBinding.inflate(layoutInflater)
         return binding.root
     }
 
@@ -31,12 +30,10 @@ class PrincipalFragment : Fragment() {
         //registrarObservables()
     }
 
-    // Registra los eventos
     private fun registrarEventos() {
-
-        // Evento de cuando el usuario da clic en el botón del mapa
-        binding.btnIngresar.setOnClickListener{
-            findNavController().navigate(R.id.action_principalFragment_to_nav_calificaciones)
+        binding.btnAyuda.setOnClickListener() {
+            findNavController().navigate(R.id.action_nav_reportes_to_ayudaReporteFragment)
         }
     }
+
 }

@@ -2,6 +2,7 @@ package mx.rmr.menuhamburguesaadmin.ui.view
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -13,12 +14,13 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import mx.rmr.menuhamburguesaadmin.R
 import mx.rmr.menuhamburguesaadmin.databinding.ActivityMainBinding
+import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
-
+    val selectedCalendar = Calendar.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -39,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_calificaciones, R.id.nav_escanearqr, R.id.nav_registrarnuevousuario,
-                R.id.nav_inventario, R.id.nav_menu
+                R.id.nav_inventario, R.id.nav_menu, R.id.nav_reportes
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -56,4 +58,7 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+
+
 }
