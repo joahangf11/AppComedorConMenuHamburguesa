@@ -31,7 +31,7 @@
             android:textSize="28dp" />
 
         <Spinner
-            android:id="@+id/spinnerReportes"
+            android:id="@+id/spinnerTipoReportes"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginRight="8dp"
@@ -72,7 +72,7 @@
             android:textSize="28dp" />
 
         <Spinner
-            android:id="@+id/spinnerSoluciones"
+            android:id="@+id/spinnerUrgencia"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginRight="8dp"

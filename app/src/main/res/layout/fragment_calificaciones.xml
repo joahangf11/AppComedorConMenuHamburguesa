@@ -90,6 +90,7 @@
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
                 android:text="Comida "
                 android:textAlignment="center"
                 android:textSize="26sp" />
@@ -122,6 +123,7 @@
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:fontFamily="@font/poppins"
                 android:text="Limpieza "
                 android:textAlignment="center"
                 android:textSize="26sp" />
@@ -154,6 +156,7 @@
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:fontFamily="@font/poppins"
                 android:text="Atencion "
                 android:textAlignment="center"
                 android:textSize="26sp" />

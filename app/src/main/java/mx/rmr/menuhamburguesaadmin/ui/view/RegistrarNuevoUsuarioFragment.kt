@@ -2,23 +2,21 @@ package mx.rmr.menuhamburguesaadmin.ui.view
 
 import android.app.DatePickerDialog
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import mx.rmr.menuhamburguesaadmin.R
 import mx.rmr.menuhamburguesaadmin.databinding.FragmentRegistrarnuevousuarioBinding
-import mx.rmr.menuhamburguesaadmin.ui.viewmodel.RegistrarNuevoUsuarioVM
-import java.time.format.DateTimeParseException
 import java.util.Calendar
 
 class RegistrarNuevoUsuarioFragment : Fragment() {
 
     private var _binding: FragmentRegistrarnuevousuarioBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     val selectedCalendar = Calendar.getInstance()
@@ -28,15 +26,13 @@ class RegistrarNuevoUsuarioFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val registrarNuevoUsuarioVM =
-            ViewModelProvider(this).get(RegistrarNuevoUsuarioVM::class.java)
-
         _binding = FragmentRegistrarnuevousuarioBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val etFecha = binding.etFecha
-        etFecha.setOnClickListener { onClickScheduledDate(it) }
 
+        etFecha.setOnClickListener { onClickScheduledDate(it) }
+        setEditTextWatcher()
 
         return root
     }
@@ -46,6 +42,64 @@ class RegistrarNuevoUsuarioFragment : Fragment() {
         _binding = null
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        registrarSpinners()
+    }
+
+    private fun registrarSpinners() {
+        // Spinner Sexo
+        val spinnerSexo = requireView().findViewById<Spinner>(R.id.spinnerSexo)
+        val opcionesSexo = arrayOf(
+            "Masculino",
+            "Femenino",
+            "Otro"
+        )
+        val adaptadorSexo = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, opcionesSexo)
+        spinnerSexo.adapter = adaptadorSexo
+
+        // Spinner de Condicion
+        val spinnerCondicion = requireView().findViewById<Spinner>(R.id.spinnerCondicion)
+        val opcionesCondicion = arrayOf(
+            "Persona mayor de 60 años",
+            "Menor de edad",
+            "Persona indígena",
+            "Persona con discapacidad",
+            "Persona perteneciente al colectivo LGBTQ+",
+            "Migrante o desplazado por conflictos",
+            "Persona en condición de calle",
+            "Mujer embarazada",
+            "Trabajador/a informal",
+            "Otra condición",
+            "No aplica"
+        )
+        val adaptadorCondicion = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, opcionesCondicion)
+        spinnerCondicion.adapter = adaptadorCondicion
+
+        //Spinner Nacionalidad
+        // Spinner de Nacionalidad
+        val spinnerNacionalida = requireView().findViewById<Spinner>(R.id.spinnerNacionalidad)
+        val opcionesNacionalidad = arrayOf(
+            "México",
+            "Guatemala",
+            "El Salvador",
+            "Chile",
+            "Brasil",
+            "Perú",
+            "Honduras",
+            "Bolivia",
+            "Venezuela",
+            "Ecuador",
+            "Cuba",
+            "Belice",
+            "Uruguay",
+            "Argentina",
+        )
+        val adaptadorNacionalidad = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, opcionesNacionalidad)
+        spinnerNacionalida.adapter = adaptadorNacionalidad
+
+    }
+
     fun onClickScheduledDate(view: View) {
         val etScheduleDate = binding.etFecha
 
@@ -53,10 +107,32 @@ class RegistrarNuevoUsuarioFragment : Fragment() {
         val month = selectedCalendar.get(Calendar.MONTH)
         val day = selectedCalendar.get(Calendar.DAY_OF_MONTH)
         val listener = DatePickerDialog.OnDateSetListener { _, y, m, d ->
-            selectedCalendar.set(y,m,d)
-            etScheduleDate.setText("$y-$m-$d")
+            selectedCalendar.set(y, m, d)
+            val formattedDate = String.format("%02d-%02d-%d", d, m + 1, y) // Formato dd-mm-aaaa
+            etScheduleDate.setText(formattedDate)
         }
-        DatePickerDialog(requireContext(),listener,year,month,day).show()
+        DatePickerDialog(requireContext(), listener, year, month, day).show()
     }
 
+    private fun setEditTextWatcher() {
+        val etTexto = binding.etCURP
+
+        etTexto.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                // No es necesario implementar este método.
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                // No es necesario implementar este método.
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                if ((s?.length ?: 0) < 18) {
+                    etTexto.error = "Faltan caracteres!"
+                } else {
+                    etTexto.error = null // Limpia la advertencia
+                }
+            }
+        })
+    }
 }

@@ -15,7 +15,11 @@
         android:id="@+id/nav_escanearqr"
         android:name="mx.rmr.menuhamburguesaadmin.ui.view.EscanearQRFragment"
         android:label="@string/menu_escanearqr"
-        tools:layout="@layout/fragment_escanearqr" />
+        tools:layout="@layout/fragment_escanearqr" >
+        <action
+            android:id="@+id/action_nav_escanearqr_to_infoAsistenteFragment"
+            app:destination="@id/infoAsistenteFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_registrarnuevousuario"
@@ -55,4 +59,9 @@
         android:name="mx.rmr.menuhamburguesaadmin.ui.view.AyudaReporteFragment"
         android:label="@string/menu_reportes_ayuda"
         tools:layout="@layout/fragment_ayuda_reporte" />
+    <fragment
+        android:id="@+id/infoAsistenteFragment"
+        android:name="mx.rmr.menuhamburguesaadmin.ui.view.InfoAsistenteFragment"
+        android:label="@string/menu_usuario_registrado"
+        tools:layout="@layout/fragment_info_asistente" />
 </navigation>
