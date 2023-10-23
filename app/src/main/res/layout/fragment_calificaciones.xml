@@ -6,72 +6,73 @@
     android:layout_height="match_parent"
     tools:context=".ui.view.CalificacionesFragment">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="100dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/imgNutriRed"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/banner" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="200dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:text="Bienvenido al comedor:"
-            android:textAlignment="center"
-            android:textSize="34sp" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_bold"
-            android:text="Nombre del Comedor"
-            android:textAlignment="center"
-            android:textSize="34sp" />
-    </LinearLayout>
-
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="100dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imgNutriRed"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/banner" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="200dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="Bienvenido al comedor:"
+                    android:textAlignment="center"
+                    android:textSize="34sp" />
+
+                <TextView
+                    android:id="@+id/tvNombreComedorNav"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Nombre del Comedor"
+                    android:textAlignment="center"
+                    android:textSize="34sp" />
+            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -120,11 +121,12 @@
                         tools:text="4.5" />
 
                     <RatingBar
-                        android:id="@+id/rbRapidezComedor"
+                        android:id="@+id/rbComidaComedor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:isIndicator="true"
                         android:stepSize="1"
-                        android:theme="@style/RatingBar"/>
+                        android:theme="@style/RatingBar" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -153,9 +155,10 @@
                         tools:text="4.5" />
 
                     <RatingBar
-                        android:id="@+id/rbRapidezComedor"
+                        android:id="@+id/rbLimpiezaComedor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:isIndicator="true"
                         android:stepSize="1"
                         android:theme="@style/RatingBar" />
                 </LinearLayout>
@@ -185,9 +188,10 @@
                         tools:text="4.5" />
 
                     <RatingBar
-                        android:id="@+id/rbRapidezComedor"
+                        android:id="@+id/rbAtencionComedor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:isIndicator="true"
                         android:stepSize="1"
                         android:theme="@style/RatingBar" />
                 </LinearLayout>
@@ -216,6 +220,7 @@
                         android:layout_marginTop="16dp"
                         android:layout_weight="1"
                         android:fontFamily="@font/poppins"
+                        android:text="$65"
                         android:textSize="24sp"
                         tools:text="$1780" />
                 </LinearLayout>
@@ -223,7 +228,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
 
     </ScrollView>
 

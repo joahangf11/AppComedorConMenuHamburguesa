@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MenuHamburguesaAdmin</string>
+    <string name="app_name">Comedor Nutri Red</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Kary</string>
@@ -16,4 +16,5 @@
     <string name="menu_reportes">Reportar Problema</string>
     <string name="menu_reportes_ayuda">¿En qué consisten los informes?</string>
     <string name="menu_usuario_registrado">Usuario Registrado</string>
+    <string name="menu_cerrarSesion">Cerrar Sesion</string>
 </resources>

@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("androidx.navigation.safeargs.kotlin")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -59,6 +61,12 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
+
+    //QR
+    implementation ("com.google.android.gms:play-services-code-scanner:16.1.0")
+    implementation ("com.google.android.gms:play-services-base:18.2.0")
+    implementation("com.google.android.gms:play-services-tflite-java:16.1.0")
+    implementation("com.google.firebase:firebase-database-ktx:20.2.2")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

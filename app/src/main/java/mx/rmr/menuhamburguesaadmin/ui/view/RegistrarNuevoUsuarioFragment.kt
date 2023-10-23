@@ -10,11 +10,18 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import mx.rmr.menuhamburguesaadmin.R
 import mx.rmr.menuhamburguesaadmin.databinding.FragmentRegistrarnuevousuarioBinding
+import mx.rmr.menuhamburguesaadmin.ui.model.Usuario
+import mx.rmr.menuhamburguesaadmin.ui.viewmodel.RegistrarNuevoUsuarioVM
+import mx.rmr.menuhamburguesaadmin.ui.viewmodel.SharedViewModel
 import java.util.Calendar
 
 class RegistrarNuevoUsuarioFragment : Fragment() {
+
+    private val viewModel: RegistrarNuevoUsuarioVM by viewModels()
 
     private var _binding: FragmentRegistrarnuevousuarioBinding? = null
     private val binding get() = _binding!!
@@ -134,5 +141,29 @@ class RegistrarNuevoUsuarioFragment : Fragment() {
                 }
             }
         })
+    }
+
+    override fun onStart() {
+        super.onStart()
+        registrarEventos()
+    }
+
+    private fun registrarEventos() {
+        binding.btnEnviarDatos.setOnClickListener{
+            var sexo = binding.spinnerSexo.selectedItem.toString()
+            if (sexo == "Masculino"){
+                sexo = "M"
+            } else if(sexo == "Femenino"){
+                sexo = "F"
+            } else{
+                sexo = "O"
+            }
+            val usuario = Usuario(0,binding.tiNombre.text.toString(),binding.tiApellido1.text.toString(),
+                binding.tiApellido2.text.toString(),
+                binding.etCURP.text.toString(),binding.spinnerNacionalidad.selectedItem.toString(),
+                sexo, binding.etFecha.text.toString(), binding.spinnerCondicion.selectedItem.toString(),
+                binding.etCelular.text.toString(), binding.etCorreo.text.toString())
+            viewModel.resgitrarUsuarioVM(usuario)
+        }
     }
 }
